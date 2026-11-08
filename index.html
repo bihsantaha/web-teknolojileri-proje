@@ -1,33 +1,47 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dönem Projesi</title>
-</head>
-<body>
-  
-  <header>  
-    <h1>Web Uygulamam</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="#hakkinda">Hakkında</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
     <article>
       <h2>Hoş Geldiniz</h2>
-      <p>Bu alana ana içeriği ekleyeceğim</p>
+      <p>Bura projenin ana içeriği olacak</p>
     </article>
+
+    <!-- İletişim Formu ve Doğrulama Alanı -->
+    <section id="iletisim">
+      <h2>Bize Ulaşın</h2>
+      <form action="#" method="post">
+        
+        <div>
+          <label for="ad">Adınız Soyadınız (Zorunlu):</label>
+          <input type="text" id="ad" name="ad" required autocomplete="name">
+        </div>
+
+        <div>
+          <label for="eposta">E-posta Adresiniz (Zorunlu):</label>
+          <input type="email" id="eposta" name="eposta" required autocomplete="email">
+        </div>
+
+        <div>
+          <label for="telefon">Telefon Numaranız:</label>
+          <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+        </div>
+
+        <div>
+          <label for="mesaj">Mesajınız (En az 10 karakter):</label>
+          <textarea id="mesaj" name="mesaj" rows="4" required minlength="10"></textarea>
+        </div>
+
+        <button type="submit">Mesajı Gönder</button>
+      </form>
+    </section>
+
+    <!-- Duyarlı Görsel Alanı -->
+    <!-- Resim eklenmedi sahte .jpg adlı dosya adı yazıldı -->
+    <section id="galeri">
+      <h2>Görseller</h2>
+      <img src="kampus-800.jpg" 
+           alt="Kampüs görünümü" 
+           srcset="kampus-400.jpg 400w, kampus-800.jpg 800w"
+           sizes="(max-width: 600px) 100vw, 50vw" 
+           width="800" height="533" 
+           loading="lazy">
+    </section>
   </main>
-
-  <footer>
-    <p>&copy;İhsan Taha Bulut</p>
-  </footer>
-
-</body>
-</html>
