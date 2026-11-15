@@ -1,0 +1,61 @@
+/* 3. Madde: Sayfa yapısının bozulmaması için en başa kutu modeli sıfırlamasını ekledim. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Madde: Kendi renk ve tipografi sistemimi kurdum. İstenen 4 token şartını sağlamak için root içine 5 tane değişken tanımladım. */
+:root {
+  --ana-renk: #2c3e50;
+  --vurgu-renk: #007bff;
+  --hata-renk: #dc3545;
+  --zemin-renk: #f4f4f9;
+  --yazi-tipi: system-ui, -apple-system, sans-serif;
+}
+
+/* 1. Madde: Form biçimlendirmesi. İstenen tüm seçici türlerini (Tür, Sınıf, Descendant, Pseudo-class) aşağıdaki bloklarda kullandım. */
+
+/* Tür (Type) seçici kullanarak sayfanın genel yazı tipi ve arka plan renklerini ayarladım. */
+body {
+  font-family: var(--yazi-tipi);
+  background-color: var(--zemin-renk);
+  color: var(--ana-renk);
+  padding: 20px;
+}
+
+/* Descendant (Soy) seçici: Sadece formun içindeki label etiketlerini bulup alt alta düzgün durmaları için block yaptım. */
+form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* Tür seçici: Input ve textarea'ları aynı anda seçip genişliklerini eşitledim. */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Pseudo-class kullanımı ve 5. Madde (Odak Halkası): outline değerini sıfırlamadım, erişilebilirlik için mavi vurgu rengimle daha belirgin hale getirdim. */
+input:focus, textarea:focus {
+  border-color: var(--vurgu-renk);
+  outline: 2px solid var(--vurgu-renk);
+}
+
+/* Pseudo-class kullanımı: Kullanıcı yanlış formatta bir veri girerse kutunun kenarlığı hata rengim olan kırmızıya dönecek. */
+input:user-invalid, textarea:user-invalid {
+  border-color: var(--hata-renk);
+}
+
+/* Sınıf (Class) seçici: Gönder butonumu özelleştirmek için projeye özel bir sınıf tanımladım. */
+.btn-gonder {
+  background-color: var(--vurgu-renk);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+}
